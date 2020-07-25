@@ -1,5 +1,7 @@
 'use strict';
 
+const API_URL = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
+
 class GoodsList {
     constructor() {
         this.goods = [];
@@ -7,12 +9,22 @@ class GoodsList {
         this.fetchGoods();
         this.render();
         this.getSum();
+        this.getGoods() 
+            .then(data => {
+                this.goods = [...data];
+                this.render();
+            });
     }
-    fetchGoods() {
-        makeGETRequest(`${API_URL}/catalogData.json`, (goods) => {
-          this.goods = JSON.parse(goods);
+   
+    getGoods() {
+        return fetch(`${API}/catalogData.json`)
+        .then(result => result.json())
+        .catch(error => {
+            console.log(error);
         })
-      }
+    }
+    
+    }
     render() {
         for(let product of this.goods) {
             const item = new GoodsItem(product);
@@ -20,6 +32,7 @@ class GoodsList {
             document.querySelector('.products').insertAdjacentHTML("beforeend", item.render());
         }
     }
+    
     getSum() {
         let sum = 0;
         for(let product of this.goods) {
@@ -31,14 +44,14 @@ class GoodsList {
 
 class GoodsItem {
     constructor(product) {
-        this.id = product.id;
-        this.title = product.title;
+        this.id-product = product.id_product;
+        this.product_name = product.product_name;
         this.price = product.price;
         this.src = product.src;
     }
     render() {
         return `<div class="product-item">
-                <h3>${this.title}</h3>
+                <h3>${this.product_name}</h3>
                 <img src='./img/${this.src}.jpg'></img>
                 <p>${this.price}<span class="rub">&#8399</span></p>
                 <button class="buy-btn">Купить</button>
@@ -77,7 +90,7 @@ class Busket {
 class BusketElement {
 
 }
-
+/*
 function makeGETrequest(url, callback) {
     var xhr;
     if (window.XMLHttpRequest) {
@@ -95,8 +108,8 @@ function makeGETrequest(url, callback) {
     xhr.open('GET', url, true);
     xhr.send();
 }
+*/
 
-const API_URL = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
 
 
 
