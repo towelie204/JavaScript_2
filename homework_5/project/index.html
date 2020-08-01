@@ -15,7 +15,7 @@
         <header class="padding-site">
             <form action="#" class="search-form">
                 <input type="text" class="search-field" v-model="searchLine">
-                <button @click="filter" class="btn-search" type="submit" v-on:click="filterProducts">
+                <button class="btn-search" type="submit" v-on:click="filterProducts">
                     <i class="fa fa-search"></i>
                 </button>
             </form>
@@ -23,7 +23,7 @@
         </header>
         <main class="padding-site">
             <div class="products">
-                <div class="product-item" v-for="product of products" :key="product.id_product">
+                <div class="product-item" v-for="product of filteredProducts" :key="product.id_product">
                     <img :src="imgCatalog" alt="Some img">
                     <div class="desc">
                         <h3>{{product.product_name}}</h3>

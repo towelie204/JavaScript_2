@@ -38,15 +38,15 @@ const app = new Vue({
         },
         filterProducts() {
 			const filter = new RegExp(this.searchLine, 'i');
-			this.filteredProducts = this.products.filter(product => filter.test(product.title));
+            this.filteredProducts = this.products.filter(product => filter.test(product.product_name));
 		},
     },
     mounted() {
         this.getJson(`${API + this.catalogUrl}`)
             .then(data => {
-                for (let el of data) {
-                    this.products.push(el);
-                    this.filteredProducts.push(el);
+                for (let product of data) {
+                    this.products.push(product);
+                    this.filteredProducts.push(product);
                 }
             })
     },
