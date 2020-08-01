@@ -1,0 +1,18 @@
+#contacts-form {
+    margin: 50px;
+    display: grid;
+    grid-template-rows: repeat(5, auto);
+    max-width: 400px;
+    grid-gap: 15px;
+}
+
+.error-msg{
+    color: red;
+    margin: 10px 0;
+}
+.invalid{
+    border: 1px solid red;
+}
+.valid{
+    border: 1px solid green;
+}
