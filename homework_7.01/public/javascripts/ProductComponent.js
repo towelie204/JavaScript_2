@@ -1,9 +1,8 @@
 Vue.component('products', {
     data() {
         return {
-            catalogUrl: '/catalogData.json',
+            catalogUrl: '../db/products.json',
             products: [],
-            imgCatalog: 'img/001.jpg',
             filteredProducts: [],
         }
     },
@@ -14,7 +13,7 @@ Vue.component('products', {
         }
     },
     mounted() {
-        this.$parent.getJson(`${API + this.catalogUrl}`)
+        this.$parent.getJson(this.catalogUrl)
             .then(data => {
                 for (let product of data) {
                     this.products.push(product);
@@ -29,13 +28,20 @@ Vue.component('products', {
 });
 
 Vue.component('product', {
-    props: ['product', 'imgCatalog'],
-    template: `<div class="product-item">
-                   <img :src="imgCatalog" alt="Some_img">
+    props: ['product'],
+    template: `<div class="product product-transformer">
+                    <a href="/transformer"><img src="img/tr1.jpg" alt="трансформер" width="134" height="200" class="catalog-picture" /></a>
+                    <br/>
+                    <a class="link" href="/transformer">Мольберт трансформер</a>
+                    <button class="buy-btn" v-on:click="$parent.$emit('add-product', product)">Купить</button>
+                </div>`
+
+   /* template: `<div class="product-item">
+                   <img :src="product.img" alt="Some_img">
                    <div class="desc">
-                       <h3>{{product.product_name}}</h3>
+                       <h3>{{product.title}}</h3>
                        <p>{{product.price}}</p>
                        <button class="buy-btn" v-on:click="$parent.$emit('add-product', product)">Купить</button>
                    </div>
-               </div>`
+               </div>`*/
 });

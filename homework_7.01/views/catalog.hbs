@@ -1,0 +1,42 @@
+<div class="container">
+        <div class="header">
+            <div class="logo">
+                <h1 class="name">Molbertov.ru</h1>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="/">Главная</a></li>
+                    <li>Каталог
+                        <ul class="catalog-menu">
+                            <li><a href="/transformer">Трансформер</a></li>
+                            <li><a href="/lira">Лира</a></li>
+                            <li><a href="/hlopushka">Хлопушка</a></li>
+                        </ul>
+                    </li>
+                    <li class="btn-cart" v-on:click= "$refs.cart.cartShow = !$refs.cart.cartShow">Корзина</li>
+                </ul>
+            </nav>
+            <search></search>
+            <cart ref="cart"></cart>
+        </div>
+        <div class="content">
+            <h1>Каталог</h1>
+            <products ref="products"></products>
+            <div class="product product-transformer">
+                <a href="/transformer"><img src="img/tr1.jpg" alt="трансформер" width="134" height="200" class="catalog-picture" /></a>
+                <br />
+                <a class="link" href="/transformer">Мольберт трансформер</a></div>
+            <div class="product product-lira">
+                <a href="/lira"><img src="img/lira1.jpg" alt="лира" width="134" height="200" class="catalog-picture" /></a>
+                <br />
+                <a class="link" href="/lira">Мольберт лира</a></div>
+            <div class="product product-hlopushka">
+                <a href="/hlopushka"><img src="img/hlop1.jpg" alt="хлопушка" width="134" height="200" class="catalog-picture" /></a>
+                <br />
+                <a class="link" href="/hlopushka">Мольберт хлопушка</a>
+            </div>
+        </div>
+        <div class="footer">
+            &copy;Все права защищены
+        </div>
+    </div>

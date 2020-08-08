@@ -4,28 +4,17 @@ const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-a
 
 const app = new Vue({
     el: '#app',
-    data: {
-        catalogUrl: '/catalogData.json',
-        cartUrl: '/getBasket.json',
-        searcField: '',
-        showCart: false,
-        products: [],
-        filteredProducts: [],
-        cartItems: [],
-        imgCatalog: 'img/001.jpg',
-        imgCart: 'img/001.jpg',
-    },
     methods: {
         getJson(url) {
             return fetch(url)
-                .then(result =>
-                    result.json())
-                .catch(error => {
-                    console.log(error)
-                })
+                .then(result => result.json())
+                .catch(error => console.log(error))
         },
+    }  
+});
 
-        addProduct(item){
+
+       /* addProduct(item){
             this.getJson(`${API}/addToBasket.json`)
                 .then(data => {
                     if(data.result === 1){
@@ -38,8 +27,8 @@ const app = new Vue({
                        }
                     }
                 })
-        },
-        remove(item){
+        },*/
+      /*  remove(item){
             this.getJson(`${API}/addToBasket.json`)
                 .then(data => {
                     if (data.result === 1) {
@@ -50,7 +39,7 @@ const app = new Vue({
                         }
                     }
                 })
-        },
+        },*/
 
         /*addProduct(product) {
             console.log(product.id_product);
@@ -68,13 +57,12 @@ const app = new Vue({
                 buttonArrow.classList.remove('fa-chevron-up');
             }
         },*/
-        filterProducts() {
+      /*  filterProducts() {
 			const filter = new RegExp(this.searchLine, 'i');
             this.filteredProducts = this.products.filter(el => filter.test(el.product_name));
-		},
-    },
-    mounted() {
-        this.getJson(`${API + this.catalogUrl}`)
+		},*/
+
+       /* this.getJson(`${API + this.catalogUrl}`)
             .then(data => {
                 for (let item of data) {
                     this.$data.products.push(item);
@@ -93,9 +81,7 @@ const app = new Vue({
                     this.$data.products.push(item);
                     this.$data.filteredProducts.push(item);
                 }
-            })
-    },
-})
+            })*/
 
 /*isProductsEmty(products) {
     if (products.lenght == 0) {
