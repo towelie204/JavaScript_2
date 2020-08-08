@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Интернет-магазин</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet"
+        type="text/css" />
+    <link rel="stylesheet" href="./font-awesome/css/font-awesome.css">
+</head>
+
+<body>
+    <div class="container" id="app">
+        <header class="padding-site">
+            <div class="cart">
+                <search></search>
+                <button class="btn-cart" v-on:click= "$refs.cart.cartShow = !$refs.cart.cartShow">Корзина</button>
+                <cart ref="cart"></cart>
+            </div>
+
+        </header>
+
+        <main class="padding-site">
+            <products ref="products"></products>
+
+            <!--
+            <div class="basketWindow hidden">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Название</th>
+                            <th scope="col">Цена</th>
+                            <th scope="col">Количество</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="2" scope="row">Итого: </th>
+                            <td colspan="3">
+                                <span class="total">0</span>
+                                <i class="fa fa-rub"></i>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>-->
+        </main>
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script src="js/ProductComponent.js"></script>
+    <script src="js/CartComponent.js"></script>
+    <script src="js/SearchComponent.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
