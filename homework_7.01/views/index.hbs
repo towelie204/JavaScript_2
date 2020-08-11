@@ -1,0 +1,32 @@
+<div class="container">
+        <div class="header">
+            <div class="logo">
+                <h1 class="name">Molbertov.ru</h1>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li>Главная</li>
+                    <li><a href="/catalog">Каталог</a>
+                        <ul class="catalog-menu">
+                            <li><a href="/transformer">Трансформер</a></li>
+                            <li><a href="/lira">Лира</a></li>
+                            <li><a href="/hlopushka">Хлопушка</a></li>
+                        </ul>
+                    </li>
+                    <li class="btn-cart" v-on:click= "$refs.cart.cartShow = !$refs.cart.cartShow">Корзина</li>
+                </ul>
+            </nav>
+            <cart ref="cart"></cart>
+        </div>
+        <div class="content">
+            <h1>Мольберты от&nbsp;производителя</h1>
+            <p class="text">Авторские изделия из&nbsp;натурального дерева по&nbsp;собственным эскизам, в&nbsp;собственной мастерской, собственными инструментами.</p>
+            <p class="text">Наша мастерская работает с&nbsp;2012&nbsp;года. За&nbsp;восемь лет мы&nbsp;обеспечили мольбертами множество учебных заведений по&nbsp;всей России и&nbsp;тысячи художников.</p>
+            <p class="text">Производство находится в&nbsp;городе Вологда, доставка по&nbsp;всей России и&nbsp;не&nbsp;только.</p>
+            <br />
+            <br />
+        </div>
+        <div class="footer">
+            &copy;Все права защищены
+        </div>
+    </div>

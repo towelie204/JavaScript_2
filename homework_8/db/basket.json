@@ -1,0 +1,24 @@
+{
+    "amount": 11200,
+    "countGoods": 3,
+    "contents": [
+      {
+        "id": 1,
+        "title": "Трансформер",
+        "price": 7000,
+        "count": 0
+      },
+      {
+        "id": 2,
+        "title": "Лира",
+        "price": 2000,
+        "count": 0
+      },
+      {
+        "id": 3,
+        "title": "Хлопушка",
+        "price": 2200,
+        "count": 0
+      }
+    ]
+  }
